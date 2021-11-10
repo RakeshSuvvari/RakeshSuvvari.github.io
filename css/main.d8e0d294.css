@@ -16,7 +16,6 @@
 .c-icon{background:url("../assets/images/codechef.svg");}
 .addr{display: block;margin-top: 15px; color: #000;}
 .foot-logo{height: 50px;width: 150px}
-.contact1{font-size: 15px;}
 @media (max-width:768px) {
     .work-experience{background-color: rgba(224, 224, 224, 0.986);padding: 15px;}.education-experience{background-color: rgba(224, 224, 224, 0.986);padding: 15px; margin-top: 30px;}
 }
