@@ -87,7 +87,7 @@
   on('click', '.mobile-nav-toggle', function(e) {
     select('body').classList.toggle('mobile-nav-active')
     this.classList.toggle('fa-bars')
-    this.classList.toggle('fa-times')
+    this.classList.toggle('fa-times-circle')
   })
 
   /**
@@ -102,7 +102,7 @@
         body.classList.remove('mobile-nav-active')
         let navbarToggle = select('.mobile-nav-toggle')
         navbarToggle.classList.toggle('fa-bars')
-        navbarToggle.classList.toggle('fa-times')
+        navbarToggle.classList.toggle('fa-times-circle')
       }
       scrollto(this.hash)
     }
