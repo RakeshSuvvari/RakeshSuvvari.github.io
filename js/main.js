@@ -140,4 +140,47 @@
     })
   });
 
+  /**
+   * Lightweight scroll reveal helper
+   * Replaces the missing scrollRevelation implementation that index.html expects.
+   */
+  if (!window.scrollRevelation) {
+    window.scrollRevelation = (selector, options = {}) => {
+      const elements = select(selector, true)
+
+      if (!elements.length) {
+        return
+      }
+
+      const hiddenClass = 'reveal'
+      const visibleClass = 'reveal-visible'
+
+      elements.forEach(element => {
+        element.classList.add(hiddenClass)
+      })
+
+      if (!('IntersectionObserver' in window)) {
+        elements.forEach(element => element.classList.add(visibleClass))
+        return
+      }
+
+      const observerOptions = Object.assign({
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      }, options)
+
+      const observer = new IntersectionObserver((entries, observerInstance) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(visibleClass)
+            observerInstance.unobserve(entry.target)
+          }
+        })
+      }, observerOptions)
+
+      elements.forEach(element => observer.observe(element))
+    }
+  }
+
 })()
