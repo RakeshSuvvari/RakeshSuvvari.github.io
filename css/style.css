@@ -188,3 +188,15 @@ a:hover {
   transform: translateY(0);
 }
 
+.contact-info > div + div {
+  margin-top: 1rem;
+}
+
+.contact-info .social-buttons {
+  display: inline-flex;
+  align-items: center;
+}
+
+.contact-info .addr p {
+  margin-bottom: 0.25rem;
+}
